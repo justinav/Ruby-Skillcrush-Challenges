@@ -26,16 +26,19 @@ def get_wisdom
 		)
 end
 
-get_wisdom
+
 puts "What would you like to ask the universe?"
 question = gets.chomp
 if (question.size > 0)
+	get_wisdom
 	puts $message.to
 end
 
-get_wisdom
 puts "Does the universe's answer satisfy you? Ask again, y/n?"
 answer = gets.chomp
-puts $message.to if answer.downcase == "y"
+if answer.downcase == "y"
+	get_wisdom
+	puts $message.to
+end
 
 
